@@ -1,0 +1,12 @@
+---
+title: "Afternoon Session"
+format: html
+editor: visual
+---
+
+## Afternoon Session
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
