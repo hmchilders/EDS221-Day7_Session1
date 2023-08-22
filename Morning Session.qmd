@@ -13,6 +13,7 @@ execute:
 library(tidyverse)
 library(palmerpenguins)
 
+
 ```
 
 ### Data Wrangling Refresh
@@ -67,4 +68,28 @@ using_n <- penguins %>%
 
 using_count <- penguins %>% 
   count(species, island, sex, name = "sample_size")
+```
+
+```{r}
+animals <- data.frame(
+  stringsAsFactors = FALSE,
+          location = c("lagoon", "bluff", "creek", "oaks", "bluff"),
+          species = c("bobcat", "coyote", "fox", "squirrel", "bobcat"),
+          maturity = c("adult", "juvenile", "adult", "juvenile", "adult")
+)
+
+sites <- data.frame(
+  stringsAsFactors = FALSE,
+          location = c("beach", "lagoon", "bluff", "oaks"),
+    full_site_name = c("Goleta Beach","UCSB Lagoon",
+                       "Ellwood Mesa","Fremont Campground"),
+      jurisdiction = c("SB City", "UCSB", "SB City", "USFS")
+)
+```
+
+```{r}
+ex_full <- full_join(animals, sites)
+ex_left <- left_join(animals, sites)
+ex_right <- right_join(animals, sites)
+ex_in <- inner_join(animals, sites)
 ```
